@@ -1,0 +1,58 @@
+<?php $__env->startSection('css'); ?>
+<link href="<?php echo e(asset("modules/reservations/css/custom.css")); ?>" rel="stylesheet" type="text/css" />
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content-header'); ?>
+<h1>TARIFAS</h1>
+<ol class="breadcrumb">
+    <li><a href="<?php echo e(url('dashboard')); ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li><a href="<?php echo e(url('tarifas')); ?>">Tarifas</a></li>
+    <li><a href="<?php echo e(url('impuestos')); ?>">Impuestos</a></li>
+    <li class="active">Nuevo</li>
+</ol>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('errors.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?><!-- errors -->
+<div class="box box-success">
+    <div class="box-body">
+        <div class='col-md-8 col-md-offset-1'>
+            <?php echo Form::open(['route' => 'impuestos.store','method'=>'POST','id'=>'form_add_impuestos','parsley-validate novalidate']); ?>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group <?php if($errors->has('clave')): ?> has-error <?php endif; ?>">
+                        <label class="required control-label  ">
+                            <span>AIRPORT FEE</span>
+                        </label>
+                        <?php echo Form::text('tax_factor',null,['id'=>'tax_factor','class' => 'form-control']); ?>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group <?php if($errors->has('clave')): ?> has-error <?php endif; ?>">
+                        <label class="required control-label  ">
+                            <span>IVA</span>
+                        </label>
+                        <?php echo Form::text('airport_fee',null,['id'=>'airport_fee','class' => 'form-control']); ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+        <div class="form-group">
+            <div class="col-sm-offset-10 col-sm-2">
+                <div class='formActionButton'><button type="submit" class="btn btn-success" id="enviar"><i class="fa fa-save"></i>  Guardar</button></div>
+                <div class='formActionButton'><a href="<?php echo e(url('impuestos')); ?>" class="btn btn-default" ><i class="fa fa-remove"></i> Cancelar</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- /.box-footer -->
+    <?php echo Form::close(); ?>
+
+</div>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

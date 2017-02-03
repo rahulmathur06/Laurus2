@@ -1,0 +1,15 @@
+{
+    "name": "Flota",
+    "alias": "flota",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Flota\\Providers\\FlotaServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

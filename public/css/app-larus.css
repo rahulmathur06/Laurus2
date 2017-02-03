@@ -1,0 +1,7 @@
+.required:before{
+    content: '*';
+    color: red;
+    font-size: 14px;
+    position: relative;
+    line-height: 12px;
+}

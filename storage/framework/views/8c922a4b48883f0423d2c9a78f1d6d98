@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="col-md-8">
+        <div class="form-group <?php if($errors->has('nombre')): ?> has-error <?php endif; ?>">
+                <label class="required control-label  ">
+                    <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre del automóvil. Caracteres invalidos ·$%&/()=?">
+                        NOMBRE
+                    </span>
+                </label>
+                <?php echo Form::text('nombre',null,['id'=>'nombre','class' => 'form-control']); ?>
+
+            </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group <?php if($errors->has('status')): ?> has-error <?php endif; ?>">
+                <label class="required control-label  ">
+                    <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre del automóvil. Caracteres invalidos ·$%&/()=?">
+                        STATUS
+                    </span>
+                </label>
+            <?php if(isset($status)): ?>
+                <?php echo Form::text('status',$status[$Tarifa->status],['id'=>'status','class' => 'form-control', 'disabled']); ?>
+
+            <?php else: ?>
+                <?php echo Form::text('status','PRECIOS PENDIENTES',['id'=>'status','class' => 'form-control', 'disabled']); ?>
+
+            <?php endif; ?>
+            </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group <?php if($errors->has('descripcion')): ?> has-error <?php endif; ?>">
+                <label class="required control-label  ">
+                    <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre del automóvil. Caracteres invalidos ·$%&/()=?">
+                        DESCRIPCIÓN
+                    </span>
+                </label>
+                <?php echo Form::text('descripcion',null,['id'=>'descripcion','class' => 'form-control']); ?>
+
+            </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group <?php if($errors->has('f_ini')): ?> has-error <?php endif; ?>">
+                <label class="required control-label  ">
+                    <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre del automóvil. Caracteres invalidos ·$%&/()=?">
+                        F. INICIO
+                    </span>
+                </label>
+                <?php echo Form::text('f_ini',null,['id'=>'f_ini','class' => 'form-control jQueryUIDatepicker']); ?>
+
+            </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group <?php if($errors->has('f_fin')): ?> has-error <?php endif; ?>">
+                <label class="required control-label  ">
+                    <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre del automóvil. Caracteres invalidos ·$%&/()=?">
+                        F. FIN
+                    </span>
+                </label>
+                <?php echo Form::text('f_fin',null,['id'=>'f_fin','class' => 'form-control jQueryUIDatepickerwithFutureDate', 'readonly']); ?>
+
+            </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group <?php if($errors->has('moneda')): ?> has-error <?php endif; ?>">
+                <label class="required control-label  ">
+                    <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre del automóvil. Caracteres invalidos ·$%&/()=?">
+                        MONEDA
+                    </span>
+                </label>
+                <?php echo Form::select('moneda', ['USD' => 'USD', 'MXN' => 'MXN'], null,['id'=>'moneda','class' => 'form-control']); ?>
+
+            </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group <?php if($errors->has('tipo')): ?> has-error <?php endif; ?>">
+                <label class="required control-label  ">
+                    <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre del automóvil. Caracteres invalidos ·$%&/()=?">
+                        TIPO DE TARIFA
+                    </span>
+                </label>
+                <?php echo Form::select('tipo', $tarifa_tipos,null,['id'=>'tipo','class' => 'form-control', 'onchange' => 'jQuery.getDetails(this.value)']); ?>
+
+            </div>
+    </div>
+</div>
+

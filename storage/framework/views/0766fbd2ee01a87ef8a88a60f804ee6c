@@ -1,0 +1,8 @@
+<p><strong>Haz click en el siguiente enlace para resetear el password:</strong></p>
+
+<p>Deberás teclear tu correo y la nueva contraseña que tu eligas con un mínimo de 6 caracteres y un máximo de 18 </p>
+
+<a href="<?php echo e(url()); ?>/password/reset/<?php echo e($token); ?>">Resetear mi password</a>
+
+
+

@@ -1,0 +1,481 @@
+<div class="form-group <?php if($errors->has('clave')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('clave', 'Clave:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('clave', null, ['class' =>'form-control', 'placeholder' => 'Ingrese un numero de clave']); ?>
+
+		<?php if($errors->has('clave')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('clave')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+<!--<div class="form-group <?php if($errors->has('descripcion')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('descripcion', 'Descripción:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('descripcion', null, ['class' =>'form-control', 'placeholder' => 'Ingrese la descripcion']); ?>
+
+		<?php if($errors->has('descripcion')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('descripcion')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>-->
+<div class="form-group <?php if($errors->has('grupo')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('grupo', 'Grupo:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('grupo', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el grupo']); ?>
+
+		<?php if($errors->has('grupo')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('grupo')); ?></label>
+		<?php endif; ?>		
+	</div>
+</div>
+<div class="form-group <?php if($errors->has('status')): ?> has-error <?php endif; ?>">
+    
+    <div class="col-xs-12 col-md-8">
+        <?php if($errors->has('status')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('status')); ?></label>
+        <?php endif; ?>
+		
+		<?php echo Form::hidden('status', '92'); ?>
+
+
+
+    </div>
+
+</div>
+<div class="form-group <?php if($errors->has('plaza_contable')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('plaza_contable', 'Plaza Contable:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<!--<?php echo Form::text('plaza_contable', null, ['class' => 'form-control', 'placeholder' => 'Ingrese la plaza contable']); ?>-->
+		<?php echo Form::select('plaza_contable', $site, null,['class' => 'form-control','placeholder' => 'Seleccione plaza contable'] ); ?>
+
+		<?php if($errors->has('plaza_contable')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('plaza_contable')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+<div class="form-group <?php if($errors->has('plaza')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('plaza', 'Plaza:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<!--<?php echo Form::text('plaza', null, ['class' => 'form-control', 'placeholder' => 'Ingrese la plaza']); ?>-->
+		<?php echo Form::select('plaza', $site, null,['class' => 'form-control','placeholder' => 'Seleccione plaza'] ); ?>
+
+		<?php if($errors->has('plaza')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('plaza')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+<div class="form-group <?php if($errors->has('tipo')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('tipo', 'Tipo:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('tipo', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el tipo']); ?>
+
+		<?php if($errors->has('tipo')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('tipo')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('fvenc_placas')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('fvenc_placas','Fecha de vencimiento placas:',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-8">
+        <?php if($errors->has('fvenc_placas')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('fvenc_placas')); ?></label>
+        <?php endif; ?>
+        <?php echo Form::text('fvenc_placas',null,['class' => 'form-control datepicker','placeholder' => 'Ingrese la fecha de vencimiento', 'id'=>'fvenc_placas', 'name'=>'fvenc_placas']); ?>
+
+    </div>
+</div>
+
+<div class="form-group <?php if($errors->has('fvenc_verif')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('fvenc_verif','Fecha de vencimiento verif:',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-8">
+        <?php if($errors->has('fvenc_verif')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('fvenc_verif')); ?></label>
+        <?php endif; ?>
+        <?php echo Form::text('fvenc_verif',null,['class' => 'form-control datepicker','placeholder' => 'Ingrese la fecha de vencimiento', 'id'=>'fvenc_verif', 'name'=>'fvenc_verif']); ?>
+
+    </div>
+</div>
+
+<div class="form-group <?php if($errors->has('clave_int')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('clave_int', 'Sipp code:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('clave_int', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el sipp code']); ?>
+
+		<?php if($errors->has('clave_int')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('clave_int')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('ano')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('ano','Año:',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-8">
+        <?php if($errors->has('ano')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('ano')); ?></label>
+        <?php endif; ?>
+        <?php echo Form::text('ano',null,['class' => 'form-control datepicker','placeholder' => 'Ingrese el año', 'id'=>'ano', 'name'=>'ano']); ?>
+
+    </div>
+
+</div>
+
+<div class="form-group <?php if($errors->has('marca')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('marca', 'Marca:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('marca', null, ['class' => 'form-control', 'placeholder' => 'Ingrese la marca']); ?>
+
+		<?php if($errors->has('marca')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('marca')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('color')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('color', 'Color:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('color', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el color']); ?>
+
+		<?php if($errors->has('color')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('color')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('no_puertas')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('no_puertas', 'No. puertas:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('no_puertas', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el número de puertas']); ?>
+
+		<?php if($errors->has('no_puertas')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('no_puertas')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('transmision')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('transmision', 'Transmision:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<!--<?php echo Form::text('transmision', null, ['class' => 'form-control', 'placeholder' => 'Ingrese la transmision']); ?>-->
+		<?php echo Form::select('transmision', config('options.types'), null,['class' => 'form-control'] ); ?>
+
+		<!--<?php echo Form::select('transmision', ['Automatica','Manual'], null,['class' => 'form-control','placeholder' => 'Seleccione transmision'] ); ?>-->
+		<?php if($errors->has('transmision')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('transmision')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('pasajeros')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('pasajeros', 'Pasajeros:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('pasajeros', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el numero de pasajeros']); ?>
+
+		<?php if($errors->has('pasajeros')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('pasajeros')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('capacidad_gas')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('capacidad_gas', 'Capacidad tanque de gasolina:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('capacidad_gas', null, ['class' => 'form-control', 'placeholder' => 'Ingrese la capacidad de gasolina en litros']); ?>
+
+		<?php if($errors->has('capacidad_gas')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('capacidad_gas')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('cia_seguros')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('cia_seguros', 'Compañia de seguros:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<!--<?php echo Form::text('cia_seguros', null, ['class' => 'form-control', 'placeholder' => 'Ingrese la compañia de seguros']); ?>-->
+		<?php echo Form::select('cia_seguros',config('cia_seguros.seguros'), null,['class' => 'form-control'] ); ?>
+
+		<?php if($errors->has('cia_seguros')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('cia_seguros')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('serie')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('serie', 'Serie:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('serie', null, ['class' => 'form-control', 'placeholder' => 'Ingrese la serie']); ?>
+
+		<?php if($errors->has('serie')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('serie')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('motor')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('motor', 'Motor:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('motor', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el no motor']); ?>
+
+		<?php if($errors->has('motor')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('motor')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('placas')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('placas', 'Placas:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('placas', null, ['class' => 'form-control', 'placeholder' => 'Ingrese las placas']); ?>
+
+		<?php if($errors->has('placas')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('placas')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('km_servicio')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('km_servicio', 'Km de servicio:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('km_servicio', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el km de servicio']); ?>
+
+		<?php if($errors->has('km_servicio')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('km_servicio')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('fecha_compra')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('fecha_compra','Fecha de compra:',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-8">
+        <?php if($errors->has('fecha_compra')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('fecha_compra')); ?></label>
+        <?php endif; ?>
+        <?php echo Form::text('fecha_compra',null,['class' => 'form-control datepicker','placeholder' => 'Ingrese la fecha de compra', 'id'=>'fecha_compra', 'name'=>'fecha_compra']); ?>
+
+    </div>
+</div>
+
+<div class="form-group <?php if($errors->has('costo_iva')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('costo_iva', 'Costo con Iva:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('costo_iva', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el costo con iva']); ?>
+
+		<?php if($errors->has('costo_iva')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('costo_iva')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('no_factura')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('no_factura', 'Numero de factura:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('no_factura', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el numero de factura']); ?>
+
+		<?php if($errors->has('no_factura')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('no_factura')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('proveedor')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('proveedor', 'Proveedor:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('proveedor', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el proveedor']); ?>
+
+		<?php if($errors->has('proveedor')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('proveedor')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('fleet_type')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('fleet_type', 'Uso(renta, contraprestacion, administracion,venta):', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('fleet_type', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el uso']); ?>
+
+		<?php if($errors->has('fleet_type')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('fleet_type')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('nota_fleet_type')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('nota_fleet_type', 'Nota de uso:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('nota_fleet_type', null, ['class' => 'form-control', 'placeholder' => 'Ingrese la nota de uso']); ?>
+
+		<?php if($errors->has('nota_fleet_type')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('nota_fleet_type')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('tenencia_ano')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('tenencia_ano','Tenencia Año:',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-8">
+        <?php if($errors->has('tenencia_ano')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('tenencia_ano')); ?></label>
+        <?php endif; ?>
+        <?php echo Form::text('tenencia_ano',null,['class' => 'form-control datepicker','placeholder' => 'Ingrese la fecha de la tenencia', 'id'=>'tenencia_ano', 'name'=>'tenencia_ano']); ?>
+
+    </div>
+</div>
+
+<div class="form-group <?php if($errors->has('tenencia_importe')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('tenencia_importe', 'Tenencia importe:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('tenencia_importe', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el importe de la tenencia']); ?>
+
+		<?php if($errors->has('tenencia_importe')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('tenencia_importe')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('modelo')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('modelo', 'Modelo:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('modelo', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el modelo']); ?>
+
+		<?php if($errors->has('modelo')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('modelo')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('gas')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('gas', 'Gas:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('gas', null, ['class' => 'form-control', 'placeholder' => 'gas']); ?>
+
+		<?php if($errors->has('gas')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('gas')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+<div class="form-group <?php if($errors->has('km')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('km', 'KM:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('km', null, ['class' => 'form-control', 'placeholder' => 'km']); ?>
+
+		<?php if($errors->has('km')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('km')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('deduciblematerial')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('deduciblematerial', 'Deducible material:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('deduciblematerial', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el deducible']); ?>
+
+		<?php if($errors->has('deduciblematerial')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('deduciblematerial')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+<div class="form-group <?php if($errors->has('deduciblerobo')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('deduciblerobo', 'Deducible robo:', ['class' => 'col-md-2 control-label']); ?>
+
+	<div class="col-xs-8">
+		<?php echo Form::text('deduciblerobo', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el deducible']); ?>
+
+		<?php if($errors->has('deduciblerobo')): ?>
+	    	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('deduciblerobo')); ?></label>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="form-group <?php if($errors->has('activo')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('activo','Estatus de activo:',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-12 col-md-8">
+        <?php if($errors->has('activo')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('activo')); ?></label>
+        <?php endif; ?>
+                <?php echo Form::select('activo', $estatus, null,['class' => 'form-control'] ); ?>
+
+
+    </div>
+
+</div>
+
+<!--<div class="form-group <?php if($errors->has('fvenc_placas')): ?> has-error <?php endif; ?>">
+    <div class="col-xs-12 col-md-8">
+        <?php if($errors->has('fvenc_placas')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('fvenc_placas')); ?></label>
+        <?php endif; ?>
+		<?php echo Form::hidden('fvenc_placas', null); ?>
+
+    </div>
+</div>
+<div class="form-group <?php if($errors->has('fvenc_verif')): ?> has-error <?php endif; ?>">
+    <div class="col-xs-12 col-md-8">
+        <?php if($errors->has('fvenc_verif')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('fvenc_verif')); ?></label>
+        <?php endif; ?>
+		<?php echo Form::hidden('fvenc_verif', null); ?>
+
+    </div>
+</div>-->
+
+<div class="form-group <?php if($errors->has('in_service')): ?> has-error <?php endif; ?>">
+    <div class="col-xs-12 col-md-8">
+        <?php if($errors->has('in_service')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('in_service')); ?></label>
+        <?php endif; ?>
+		<?php echo Form::hidden('in_service', null); ?>
+
+    </div>
+</div>
+<div class="form-group <?php if($errors->has('fecha_um')): ?> has-error <?php endif; ?>">
+    <div class="col-xs-12 col-md-8">
+        <?php if($errors->has('fecha_um')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('fecha_um')); ?></label>
+        <?php endif; ?>
+		<?php echo Form::hidden('fecha_um', null); ?>
+
+    </div>
+</div>
+<div class="form-group <?php if($errors->has('fecha_envio')): ?> has-error <?php endif; ?>">
+    <div class="col-xs-12 col-md-8">
+        <?php if($errors->has('fecha_envio')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('fecha_envio')); ?></label>
+        <?php endif; ?>
+		<?php echo Form::hidden('fecha_envio', null); ?>
+
+    </div>
+</div>

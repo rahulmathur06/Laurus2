@@ -1,0 +1,46 @@
+    
+<div class="form-group <?php if($errors->has('clave')): ?> has-error <?php endif; ?>">
+    <label class="required control-label  ">
+        <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre del automóvil. Caracteres invalidos ·$%&/()=?">
+            LOCACIÓN PICK UP
+        </span>
+    </label>
+    <?php echo Form::select('ciudad_pickup_id', $locaciones, null, ['id'=>'ciudad_pickup_id','class' => 'form-control select2', 'onChange'=> 'setOrigin()']); ?>
+
+</div>
+
+<div class="form-group <?php if($errors->has('clave')): ?> has-error <?php endif; ?>">
+    <label class="required control-label  ">
+        <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre del automóvil. Caracteres invalidos ·$%&/()=?">
+            LOCACIÓN DROP OFF   
+        </span>
+    </label>
+    <?php echo Form::select('ciudad_dropoff_id', $locaciones, null, ['id'=>'ciudad_dropoff_id','class' => 'form-control select2', 'onChange' => 'setDestination()']); ?>
+
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group <?php if($errors->has('clave')): ?> has-error <?php endif; ?>">
+            <label class="required control-label  ">
+                <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre del automóvil. Caracteres invalidos ·$%&/()=?">
+                    DISTANCIA CALCULADA
+                </span>
+            </label>
+            <?php echo Form::text('distancia_calc',null,['id'=>'distancia_calc','class' => 'form-control', 'readonly']); ?>
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group <?php if($errors->has('clave')): ?> has-error <?php endif; ?>">
+            <label class="required control-label  ">
+                <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre del automóvil. Caracteres invalidos ·$%&/()=?">
+                    DISTANCIA A UTILIZAR
+                </span>
+            </label>
+            <?php echo Form::text('distancia',null,['id'=>'distancia','class' => 'form-control']); ?>
+
+        </div>
+    </div>
+</div>
+

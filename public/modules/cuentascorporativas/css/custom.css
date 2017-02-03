@@ -1,0 +1,48 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 16, 2016, 1:18:05 PM
+    Author     : User
+*/
+
+
+.formActionButton .btn {
+    width: 100%;
+}
+
+.formActionButton {
+    margin-bottom: 3px;
+}
+
+table td.btn-group{
+    width:100%;
+}
+
+/*For enterprise registration page*/
+/*Start*/
+.empresa-registration legend {
+    font-size: 15px;
+    color: #2f64dd;
+    margin-top: 15px;
+}
+.empresa-registration .control-label {
+    font-size: 12px;
+    font-weight: 600;
+}
+.empresa-registration .form-group {
+    margin-bottom: 5px;
+}
+.empresa-registration span.field-group-title {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.disabled.disabled_advanced{
+    pointer-events: none;
+}
+/*End*/
+/*For enterprise registration page*/

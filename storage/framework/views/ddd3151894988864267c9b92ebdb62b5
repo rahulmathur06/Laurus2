@@ -1,0 +1,73 @@
+<?php $__env->startSection('css'); ?>
+    <link href="<?php echo e(asset("bower_components/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css")); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(asset("bower_components/admin-lte/plugins/select2/select2.css")); ?>" rel="stylesheet" type="text/css" />
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content-header'); ?>
+    <h1><i class="fa fa-car"></i> Tarifas Mínimas Y Máximas </h1>
+    <ol class="breadcrumb">
+        <li><a href="<?php echo e(url('dashboard')); ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="<?php echo e(url('rangos')); ?>">Tarifas</a></li>
+        <li class="active">Nuevo</li>
+    </ol>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('errors.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?><!-- errors -->
+    <div class="box box-success">
+        <div class="box-header with-border">
+           
+        </div><!-- /.box-header -->
+        <div class="box-body">
+            <?php echo Form::open(['route' => 'rangos.store','method'=>'POST','id'=>'form_clases','parsley-validate novalidate','class'=> 'form-horizontal']); ?>
+
+                    <?php echo $__env->make('reservaciones::Rangos.partials.basic', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+        <?php echo Form::close(); ?>
+
+    </div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('scripts'); ?>
+    <script src="<?php echo e(asset('bower_components/admin-lte/plugins/select2/select2.full.js')); ?>" type="text/javascript"></script>
+    <script>
+        $(function () {
+            $(".select2").select2();
+        });
+
+(function ($) {
+
+    $.get_location_id_to_car = function (locationID) {
+        $.ajax({
+            url: "<?php echo URL::to('getlocationtocars'); ?>",
+            type: "get",
+            data: {
+                locationID: locationID,type:'cr',
+            },
+            success: function (result) {
+                debugger;
+                $("#locationData").html(result);
+            }
+        });
+    }
+
+})(jQuery);
+  jQuery.get_location_id_to_car(document.getElementById('location_id').value, "<?php echo URL::to('getlocationtocars'); ?>");
+    $('#GetAutos').on("click", function () {
+        jQuery.get_location_id_to_car(document.getElementById('location_id').value, "<?php echo URL::to('getlocationtocars'); ?>");
+    });
+
+
+//use for number  keypress validiation
+$(document).ready(function () { 
+  //called when key is pressed in textbox
+  $(".numbers").keypress(function (e) {
+     //if the letter is not digit then display error and don't type anything
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+        $("#errmsg").html("Digits Only").show().fadeOut("slow");
+               return false;
+    }
+   }); 
+});
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

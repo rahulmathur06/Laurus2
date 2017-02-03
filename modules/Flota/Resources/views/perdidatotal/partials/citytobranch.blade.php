@@ -1,0 +1,1 @@
+{!! Form::select('sucursal',$branch,null,['id'=>'sucursalAutoFill','class'=>'form-control select2 select2-hidden-accessible','style'=>'width :100%']) !!}

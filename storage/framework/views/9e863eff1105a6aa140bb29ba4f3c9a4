@@ -1,0 +1,25 @@
+
+<div class="form-group <?php if($errors->has('ife')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('ife','Identificación oficial',['class' =>'col-xs-4 required control-label']); ?>
+
+    <div class="col-xs-8">
+        <?php echo Form::file('ife',null); ?>
+
+    </div>
+</div>
+<div class="form-group <?php if($errors->has('proof_address')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('proof_address','Comprobante de domicilio',['class' =>'col-xs-4 required control-label']); ?>
+
+    <div class="col-xs-8">
+        <?php echo Form::file('proof_address'.null); ?>
+
+    </div>
+</div>
+<div class="form-group <?php if($errors->has('proof_income')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('proof_income','Comprobante de ingresos',['class' =>'col-xs-4 required control-label']); ?>
+
+    <div class="col-xs-8">
+        <?php echo Form::file('proof_income',null); ?>
+
+    </div>
+</div>

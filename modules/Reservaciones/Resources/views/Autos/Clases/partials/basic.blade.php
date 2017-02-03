@@ -1,0 +1,56 @@
+
+
+        <div class="form-group @if ($errors->has('clase')) has-error @endif">
+            <label class="required control-label col-lg-2 ">
+                <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre de la clase, máximo 2 caracteres">
+                    Clase
+                </span>
+            </label>
+            <div class="col-lg-8">
+                {!! Form::text('clase',null,['class' => 'form-control','id' => 'clase']) !!}
+            </div>
+        </div><!-- /.form-group -->
+        <div class="form-group @if ($errors->has('categoria_id')) has-error @endif">
+            <label class="required control-label col-lg-2 ">
+                <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Categoria a la que va asignada la clase">
+                   Categoria
+                </span>
+            </label>
+            <div class="col-lg-8">
+            {!! Form::select('categoria_id',$categorias,null,['class'=>'form-control select2 select2-hidden-accessible','style'=>'width :100%']) !!}
+            </div>
+        </div><!-- /.form-group  -->
+        <div class="form-group @if ($errors->has('grupo')) has-error @endif">
+            <label class="required control-label col-lg-2 ">
+                <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Grupo a la que pertenece la clase">
+                   Grupo
+                </span>
+            </label>
+            <div class="col-lg-8">
+            {!! Form::select('grupo',$grupos,null,['class'=>'form-control select2 select2-hidden-accessible','style'=>'width :100%']) !!}
+            </div>
+        </div><!-- /.form-group  -->
+        <div class="form-group @if ($errors->has('sipp')) has-error @endif">
+            <label class="required control-label col-lg-2 ">
+                <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Caracteres invalidos 0-9·$%&/()=?. 4 caracteres minimo y máximo">
+                   SIPP
+                </span>
+            </label>
+            <div class="col-lg-8">
+            {!! Form::text('sipp',null,['class' => 'form-control','id' => 'sipp']) !!}
+                <label><small>(Estándares de los Sistemas del Sector de la Asociación de la Industria del Alquiler de Coches)</small></label>
+            </div>
+        </div><!-- /.form-group -->
+        <div class="form-group @if ($errors->has('prioridad')) has-error @endif">
+            <label class="required control-label col-lg-2 ">
+                <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Caracteres invalidos A-Z·$%&/()=?.">
+                    Prioridad
+                </span>
+            </label>
+            <div class="col-lg-8">
+            {!! Form::text('prioridad',null,['class' => 'form-control','id' => 'prioridad']) !!}
+            </div>
+        </div><!-- /.form-group -->
+
+
+

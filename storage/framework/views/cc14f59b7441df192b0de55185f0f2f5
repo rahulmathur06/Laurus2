@@ -1,0 +1,233 @@
+<div class="form-group <?php if($errors->has('image')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('image','Avatar',['class' =>'col-xs-2 control-label']); ?>
+
+
+    <div class="col-xs-8">
+        <?php if($errors->has('image')): ?>
+            <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('image')); ?></label>
+        <?php endif; ?>
+            <?php if(isset($users->id)): ?>
+            <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px;">
+                <img src="<?php echo e(url('img/users/'.$users->image)); ?>"></div>
+            <?php endif; ?>
+
+        <?php echo Form::file('image'); ?>
+
+    </div>
+</div>
+
+<div class="form-group <?php if($errors->has('username')): ?> has-error <?php endif; ?>">
+
+    <?php echo Form::label('username','Usuario:',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-8">
+        <?php if($errors->has('username')): ?>
+            <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('username')); ?></label>
+        <?php endif; ?>
+        <?php echo Form::text('username',null,['class' => 'form-control','placeholder' => 'Ingrese un usuario']); ?>
+
+    </div>
+</div>
+<div class="form-group <?php if($errors->has('first_name')): ?> has-error <?php endif; ?>">
+
+    <?php echo Form::label('first_name','Nombre',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-8">
+        <?php if($errors->has('first_name')): ?>
+            <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> <?php echo e($errors->first('first_name')); ?></label>
+        <?php endif; ?>
+        <?php echo Form::text('first_name',null,['class' => 'form-control','placeholder' => 'Ingrese un nombre']); ?>
+
+    </div>
+</div>
+<div class="form-group <?php if($errors->has('last_name')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('last_name','Apellido',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-8">
+        <?php if($errors->has('last_name')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('last_name')); ?></label>
+        <?php endif; ?>
+        <?php echo Form::text('last_name',null,['class' => 'form-control','placeholder' => 'Ingrese un apellido']); ?>
+
+    </div>
+
+</div>
+
+<div class="form-group <?php if($errors->has('fecha_nacimiento')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('fecha_nacimiento','Fecha de nacimiento:',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-8">
+        <?php if($errors->has('fecha_nacimiento')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('fecha_nacimiento')); ?></label>
+        <?php endif; ?>
+        <?php echo Form::text('fecha_nacimiento',null,['class' => 'form-control datepicker','placeholder' => 'Ingrese la fecha de nacimiento', 'id'=>'fecha_nacimiento', 'name'=>'fecha_nacimiento']); ?>
+
+    </div>
+
+</div>
+<div class="form-group <?php if($errors->has('position')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('position','Puesto',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-12 col-md-8">
+        <?php if($errors->has('position')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('position')); ?></label>
+        <?php endif; ?>
+        <?php echo Form::text('position',null,['class' => 'form-control','placeholder' => 'Ingrese un puesto']); ?>
+
+    </div>
+
+</div>
+<div class="form-group <?php if($errors->has('telefono')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('telefono','Telefono:',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-12 col-md-8">
+        <?php if($errors->has('telefono')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('telefono')); ?></label>
+        <?php endif; ?>
+        <?php echo Form::text('telefono',null,['class' => 'form-control','placeholder' => 'Ingrese un telefono']); ?>
+
+    </div>
+
+</div>
+<div class="form-group <?php if($errors->has('extension')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('extension','Extension:',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-12 col-md-8">
+        <?php if($errors->has('extension')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('extension')); ?></label>
+        <?php endif; ?>
+        <?php echo Form::text('extension',null,['class' => 'form-control','placeholder' => 'Ingrese una extension']); ?>
+
+    </div>
+
+</div>
+
+<div class="form-group <?php if($errors->has('fecha_ingreso')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('fecha_ingreso','Fecha de ingreso:',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-8">
+        <?php if($errors->has('fecha_ingreso')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('fecha_ingreso')); ?></label>
+        <?php endif; ?>
+        <?php echo Form::text('fecha_ingreso',null,['class' => 'form-control datepicker','placeholder' => 'Ingrese la fecha de ingreso', 'id'=>'fecha_ingreso', 'name'=>'fecha_ingreso']); ?>
+
+    </div>
+
+</div>
+<div class="form-group <?php if($errors->has('email')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('email','Correo eléctronico',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-8">
+        <?php if($errors->has('email')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('email')); ?></label>
+        <?php endif; ?>
+        <?php echo Form::email('email',null,['class' => 'form-control','placeholder' => 'example@dominio.com']); ?>
+
+    </div>
+
+</div>
+<?php if(!isset($users->id)): ?>
+    <div class="form-group <?php if($errors->has('password')): ?> has-error <?php endif; ?>">
+        <?php echo Form::label('password','Contraseña',['class' =>'col-xs-2 control-label']); ?>
+
+        <div class="col-xs-8">
+            <?php if($errors->has('password')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+                <?php echo e($errors->first('password')); ?></label>
+            <?php endif; ?>
+            <?php echo Form::password('password',['class' => 'form-control','placeholder' => 'Contraseña temporal']); ?>
+
+        </div>
+
+    </div>
+
+    <div class="form-group <?php if($errors->has('retype_password')): ?> has-error <?php endif; ?>">
+        <?php echo Form::label('password','Repetir contraseña',['class' =>'col-xs-2 control-label']); ?>
+
+        <div class="col-xs-8">
+            <?php if($errors->has('retype_password')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+                <?php echo e($errors->first('retype_password')); ?></label>
+            <?php endif; ?>
+            <?php echo Form::password('retype_password',['class' => 'form-control','placeholder' => 'Repetir contraseña temporal']); ?>
+
+        </div>
+
+    </div>
+<?php endif; ?>
+<div class="form-group <?php if($errors->has('roles')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('roles','Rol',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-8">
+        <?php if($errors->has('roles')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('roles')); ?></label>
+        <?php endif; ?>
+            <?php if(isset($users->id)): ?>
+                <?php echo Form::select('roles',$roles, $rolUser[0]->slug,['class' => 'form-control'] ); ?>
+
+            <?php else: ?>
+                <?php echo Form::select('roles',$roles, null,['class' => 'form-control'] ); ?>
+
+            <?php endif; ?>
+    </div>
+
+</div>
+<div class="form-group <?php if($errors->has('plaza_matriz')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('plaza_matriz','Plaza matriz',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-12 col-md-8">
+        <?php if($errors->has('plaza_matriz')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('plaza_matriz')); ?></label>
+        <?php endif; ?>
+            <?php if(isset($users->id)): ?>
+                <?php echo Form::select('plaza_matriz_id', $plazas_select, $users->plaza_matriz_id,['class' => 'form-control'] ); ?>
+
+            <?php else: ?>
+                <?php echo Form::select('plaza_matriz_id', $plazas_select, null,['class' => 'form-control'] ); ?>
+
+            <?php endif; ?>
+    </div>
+
+</div>
+
+<div class="form-group <?php if($errors->has('jefe_directo')): ?> has-error <?php endif; ?>">
+    <?php echo Form::label('jefe_directo','Jefe directo:',['class' =>'col-xs-2 control-label']); ?>
+
+    <div class="col-xs-12 col-md-8">
+        <?php if($errors->has('jefe_directo')): ?> <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+            <?php echo e($errors->first('jefe_directo')); ?></label>
+        <?php endif; ?>
+                <?php echo Form::select('jefe_directo', $jefe_directo, null,['class' => 'form-control'] ); ?>
+
+
+    </div>
+
+</div>
+
+<div class="form-group <?php if($errors->has('plazas')): ?> has-error <?php endif; ?>">
+	<?php echo Form::label('plazas','Plazas',['class' =>'col-xs-2 control-label']); ?>
+
+	<div class="col-xs-12 col-md-8">
+		<?php foreach($place_user as $plaza): ?>
+		    <div class="col-xs-12 col-md-4">
+		        <?php if($errors->has('plazas')): ?>
+		        	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+					<?php echo e($errors->first('plazas')); ?></label>
+		        <?php endif; ?>
+		        <?php echo Form::checkbox('plazas[]', $plaza->Clave, true); ?> <?php echo $plaza->Nombre; ?>
+
+		    </div>
+		<?php endforeach; ?>
+
+		<?php foreach($plazas as $plaza): ?>
+		    <div class="col-xs-12 col-md-4">
+		        <?php if($errors->has('plazas')): ?>
+		        	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>
+					<?php echo e($errors->first('plazas')); ?></label>
+		        <?php endif; ?>
+		        <?php echo Form::checkbox('plazas[]', $plaza->Clave); ?> <?php echo $plaza->Nombre; ?>
+
+		    </div>
+		<?php endforeach; ?>
+	</div>
+</div>
+
+

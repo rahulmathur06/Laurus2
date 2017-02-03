@@ -1,0 +1,77 @@
+<style type="text/css">
+.check_sign {
+    padding-top: 29px;
+}
+</style>
+<fieldset>
+   
+    <!--    <legend></legend>-->
+    <div class="row">
+        <div class="col-md-9">
+            <div class="form-group <?php if($errors->has('documento')): ?> has-error <?php endif; ?>">
+                <label class="required control-label  ">
+                    <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre del automóvil. Caracteres invalidos ·$%&/()=?">
+                       Nombre del Documento
+                    </span>
+                </label>
+                <?php echo Form::text('documento',null,['class' => 'form-control','id' => 'documento']); ?>
+
+            </div><!-- /.form-group -->
+        </div>
+        <div class="col-md-2 check_sign">
+            <label>
+                <input value="1" type="checkbox" class="minimal" name="requerido" <?php if(isset($checklist)): ?> <?php if($checklist->requerido == 1): ?>checked="" <?php endif; ?> <?php else: ?> checked="" <?php endif; ?>>
+                Requerido
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group <?php if($errors->has('tipo_persona_id')): ?> has-error <?php endif; ?>">
+                <label class="required control-label  ">
+                    <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Tipo de aire ciudad">
+                        Tipo de Persona
+                    </span>
+                </label>
+                <?php echo Form::select('tipo_persona_id',$tipo_person,null,['id'=>'tipo_persona_id','class'=>'form-control select2 select2-hidden-accessible','style'=>'width :100%']); ?>
+
+            </div><!-- /.form-group -->
+        </div>
+        <div class="col-md-3">
+            <div class="form-group <?php if($errors->has('tipo_convenio_id')): ?> has-error <?php endif; ?>">
+                <label class="required control-label  ">
+                    <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Tipo de aire acondicionado">
+                         Tipo de Convenio
+                    </span>
+                </label>
+                <div id="tipo_convention">
+                <?php echo Form::select('tipo_convenio_id',$tipo_convention,null,['class'=>'form-control select2 select2-hidden-accessible','style'=>'width :100%', 'id' => 'tipo_convenio_id']); ?>
+
+                </div>
+            </div><!-- /.form-group -->
+        </div>
+
+         <div class="col-md-3">
+            <div class="form-group <?php if($errors->has('orden')): ?> has-error <?php endif; ?>">
+                <label class="required control-label  ">
+                    <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Tipo de aire acondicionado">
+                        Orden
+                    </span>
+                </label>
+                <div id="orden">
+                     <?php echo Form::number('orden',null,['class' => 'form-control','id' => 'sort_order', 'required' => false]); ?>
+
+                </div>
+            </div><!-- /.form-group -->
+        </div>
+        <div class="col-md-2 check_sign">
+            <label>
+                <input  value="1" type="checkbox" class="minimal" name="validar_fecha" <?php if(isset($checklist)): ?>  <?php if($checklist->validar_fecha == 1): ?>checked="" <?php endif; ?> <?php else: ?> checked="" <?php endif; ?>>
+                Validar Vigencia
+            </label>
+        </div>
+   
+    </div><!-- /.row -->
+   
+
+</fieldset>

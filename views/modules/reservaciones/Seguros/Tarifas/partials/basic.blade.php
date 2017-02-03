@@ -1,0 +1,43 @@
+<fieldset>
+    <legend>Información Básica</legend>
+    <div class="col-md-6">
+        <div class="form-group @if ($errors->has('nombre')) has-error @endif">
+            <label class="required control-label ">
+                 <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre, Caracteres invalido 0-9·$%&/()=?¿">
+                     Nombre
+                 </span>
+            </label>
+
+            {!! Form::text('nombre',null,['class' => 'form-control','id' => 'nombre','tabindex'=>'1']) !!}
+
+        </div><!-- /.form-group -->
+    </div><!-- /.col  -->
+    <div class="col-md-6">
+        <div class="form-group @if ($errors->has('plan_code')) has-error @endif">
+            <label class="required control-label ">
+                 <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Plan code, Caracteres invalido 0-9·$%&/()=?¿">
+                     Plan code
+                 </span>
+            </label>
+
+            {!! Form::text('plan_code',null,['class' => 'form-control','id' => 'plan_code','tabindex'=>'2']) !!}
+
+        </div><!-- /.form-group -->
+
+    </div>
+
+    <div class="col-md-12">
+
+        <div class="form-group"@if ($errors->has('descripcion')) has-error @endif>
+            <label class="required control-label ">
+                 <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre, Caracteres invalido 0-9·$%&/()=?¿">
+                     Descripción
+                 </span>
+            </label>
+            {!! Form::textarea('descripcion', null, ['style'=>'width: 100%; height: 100px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;','tabindex'=>'3']) !!}
+
+        </div>
+    </div>
+
+
+</fieldset>

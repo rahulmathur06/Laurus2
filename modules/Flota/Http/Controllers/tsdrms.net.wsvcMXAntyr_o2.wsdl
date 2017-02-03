@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tsdrms.net/wsvcMXAntyr" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tsdrms.net/wsvcMXAntyr" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tsdrms.net/wsvcMXAntyr">
+      <s:import />
+      <s:element name="FleetInbound">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="Flota" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FleetInboundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="FleetInboundResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompanyInbound">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="Empresas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompanyInboundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="CompanyInboundResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified">
+      <s:element name="Flota">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="CarCreate">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="CLAVE" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="DESCRIPCION" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="GRUPO" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="STATUS" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="CIA_SEGUROS" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="CLAVE_INT" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="TIPO" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="MODELO" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="MARCA" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="CAPACIDAD_GAS" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="COLOR" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="SERIE" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="PLACAS" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="FVENC_PLACAS" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="FVENC_CALC" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="FVENC_VERIF" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="KM_SERVICIO" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="KM" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="PLAZA" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="PLAZA_CONTABLE" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="GAS" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="IN_SERVICE" type="s:dateTime" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="FLEET_TYPE" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="DEDUCIBLEMATERIAL" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="DEDUCIBLEROBO" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FleetInboundResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="CarCreate">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="CLAVE" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="MessageCode" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="MessageDescription" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+          <s:attribute name="MessageCode" type="s:string" />
+          <s:attribute name="MessageDescription" type="s:string" />
+        </s:complexType>
+      </s:element>
+      <s:element name="Empresas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="Empresa">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="id_empresa_larus" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Type" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="razon_social" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cliente_fiscal" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nombre" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="rfc" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="empresapadre" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Status" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Ejectiva_Id" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="direccion_Calle" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="direccion_Colonia" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="direccion_Ciudad" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="direccion_estado" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="direccion_pais" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="direccion_codigo" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="telefono1" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="telefono2" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fax" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="email" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="representante" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompanyInboundResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="Empresa">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="id_empresa_larus" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="MessageCode" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="MessageDescription" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+          <s:attribute name="MessageCode" type="s:string" />
+          <s:attribute name="MessageDescription" type="s:string" />
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FleetInboundSoapIn">
+    <wsdl:part name="parameters" element="tns:FleetInbound" />
+  </wsdl:message>
+  <wsdl:message name="FleetInboundSoapOut">
+    <wsdl:part name="parameters" element="tns:FleetInboundResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompanyInboundSoapIn">
+    <wsdl:part name="parameters" element="tns:CompanyInbound" />
+  </wsdl:message>
+  <wsdl:message name="CompanyInboundSoapOut">
+    <wsdl:part name="parameters" element="tns:CompanyInboundResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsvcMXAntyrSoap">
+    <wsdl:operation name="FleetInbound">
+      <wsdl:input message="tns:FleetInboundSoapIn" />
+      <wsdl:output message="tns:FleetInboundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyInbound">
+      <wsdl:input message="tns:CompanyInboundSoapIn" />
+      <wsdl:output message="tns:CompanyInboundSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsvcMXAntyrSoap" type="tns:wsvcMXAntyrSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FleetInbound">
+      <soap:operation soapAction="http://tsdrms.net/wsvcMXAntyr/FleetInbound" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyInbound">
+      <soap:operation soapAction="http://tsdrms.net/wsvcMXAntyr/CompanyInbound" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsvcMXAntyrSoap12" type="tns:wsvcMXAntyrSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FleetInbound">
+      <soap12:operation soapAction="http://tsdrms.net/wsvcMXAntyr/FleetInbound" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyInbound">
+      <soap12:operation soapAction="http://tsdrms.net/wsvcMXAntyr/CompanyInbound" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsvcMXAntyr">
+    <wsdl:port name="wsvcMXAntyrSoap" binding="tns:wsvcMXAntyrSoap">
+      <soap:address location="https://tsdrms.net/wsvcMXAntyr.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsvcMXAntyrSoap12" binding="tns:wsvcMXAntyrSoap12">
+      <soap12:address location="https://tsdrms.net/wsvcMXAntyr.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

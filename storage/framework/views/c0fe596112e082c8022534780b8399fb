@@ -1,0 +1,38 @@
+<?php $__env->startSection('css'); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content-header'); ?>
+    <h1><i class="fa fa-car"></i> Autos <small>Nueva categoria</small></h1>
+    <ol class="breadcrumb">
+        <li><a href="<?php echo e(url('dashboard')); ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="<?php echo e(url('categorias')); ?>">Autos</a></li>
+        <li><a href="<?php echo e(url('categorias')); ?>">Categorias</a></li>
+        <li class="active">Nueva</li>
+    </ol>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+  <?php echo $__env->make('errors.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="box box-success">
+        <div class="box-body">
+            <?php echo Form::open(['route' => 'categorias.store','method'=>'POST','id'=>'form_categoria','parsley-validate novalidate','class'=> 'form-horizontal']); ?>
+
+            <?php echo $__env->make('reservaciones::Autos.Categorias.partials.translate', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <input type="hidden" value="es-MX" name="idioma">
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            <div class="form-group">
+                <div class="col-sm-offset-10 col-sm-2">
+                    <button type="submit" class="btn btn-primary" id="enviar"><i class="fa fa-save"></i> Guardar</button>
+                    <a href="<?php echo e(url('categorias')); ?>" class="btn btn-danger" ><i class="fa fa-remove"></i> Cancelar</a>
+                </div>
+            </div>
+        </div>
+        <!-- /.box-footer -->
+        <?php echo Form::close(); ?>
+
+    </div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('scripts'); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

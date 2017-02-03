@@ -1,0 +1,54 @@
+<?php $__env->startSection('css'); ?>
+<link href="<?php echo e(asset("bower_components/admin-lte/plugins/select2/select2.css")); ?>" rel="stylesheet" type="text/css" />
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content-header'); ?>
+    <h1><i class="fa fa-car"></i> Tarifas Mínimas Y Máximas </h1>
+    <ol class="breadcrumb">
+        <li><a href="<?php echo e(url('dashboard')); ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="<?php echo e(url('rangos')); ?>">Tarifas</a></li>
+        <li class="active">Actualizar</li>
+    </ol>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('errors.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?><!-- errors -->
+    <div class="box box-success">
+        <div class="box-body">
+            <?php echo Form::model($clase,['route' => ['rangos.update', $clase->id],'method'=>'PUT','id'=>'form_clase','parsley-validate novalidate','class'=> 'form-horizontal']  ); ?>
+
+            <?php echo $__env->make('reservaciones::Rangos.partials.basic', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+      
+        <?php echo Form::close(); ?>
+
+    </div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('scripts'); ?>
+    <script src="<?php echo e(asset('bower_components/admin-lte/plugins/select2/select2.full.js')); ?>" type="text/javascript"></script>
+    <script>
+        $(function () {
+            $(".select2").select2();
+        });
+(function ($) {
+
+    $.get_location_id_to_car = function (locationID) {
+        $.ajax({
+            url: "<?php echo URL::to('getlocationtocars'); ?>",
+            type: "get",
+            data: {
+                locationID: locationID,tarifasID:"<?php echo $clase->id; ?>",type:'up'
+            },
+            success: function (result) {
+                $("#locationData").html(result);
+            }
+        });
+    }
+
+})(jQuery);
+  jQuery.get_location_id_to_car(document.getElementById('location_id').value, "<?php echo URL::to('getlocationtocars'); ?>");
+    $('#GetAutos').on("click", function () {
+        jQuery.get_location_id_to_car(document.getElementById('location_id').value, "<?php echo URL::to('getlocationtocars'); ?>");
+    });
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

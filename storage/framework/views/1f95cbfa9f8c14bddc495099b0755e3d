@@ -1,0 +1,62 @@
+
+<!--    <legend>Captura de Siniestro</legend>-->
+<div class="row">
+    <div class='col-md-6'>
+        <fieldset>
+            <legend>DATOS GENERALES</legend>
+            <?php echo $__env->make('cuentascorporativas::empresas.partials.basic_data_general', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </fieldset>
+        <fieldset>
+            <legend>EJECUTIVO ASIGNADO</legend>
+            <?php echo $__env->make('cuentascorporativas::empresas.partials.basic_executive', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </fieldset>
+    </div>
+    <div class="col-md-6">
+        <fieldset>
+            <div class='row'>
+                <div class='col-md-12'>
+                    <div class="form-group <?php if($errors->has('poliza')): ?> has-error <?php endif; ?>">
+
+                        <div class="col-md-10">
+                            <?php echo Form::checkbox('cliente_fiscal', '1'); ?> <strong>&nbsp;Cliente fiscal</strong>
+                        </div> 
+                    </div><!-- /.form-group -->
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-12'>
+                    <div class="form-group <?php if($errors->has('poliza')): ?> has-error <?php endif; ?>">
+                        <div class="col-md-10">
+                            <?php echo Form::checkbox('requiere_credito', 'yes', $requireCredit, ['onclick' => 'collapseIfCreditNotRequired(this)', 'id' => 'requiere_credito']); ?> <strong>&nbsp;Requiere Crédito</strong>
+                        </div> 
+                    </div><!-- /.form-group -->
+                </div>
+            </div>
+            <div class="row" id="collapsibleIfCreditNotRequired">
+                <div class='col-md-10 col-md-offset-2'>
+                    <?php if($requireCredit): ?>
+                    <?php echo Form::model($EmpresaCredito,['id'=>'form_empresas_register_credit','parsley-validate novalidate', 'class' => 'form-horizontal', 'token' => false]  ); ?>
+
+                    <?php endif; ?>
+                    <?php echo $__env->make('cuentascorporativas::empresas.partials.basic_empresa_credito', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                    <?php if($requireCredit): ?>
+                    <?php echo Form::model($Empresa); ?>
+
+                    <?php endif; ?>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>OTROS DATOS DE LA EMPRESA</legend>
+            <?php echo $__env->make('cuentascorporativas::empresas.partials.basic_other_info', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </fieldset>
+
+        <!-- Bootstrap modals -->
+        <!-- Comments Model -->
+        <div id="InsertCommentModal" class="modal fade" role="dialog">
+            <?php echo $__env->make('cuentascorporativas::empresas.partials.basic_modal_comment', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+
+    </div>
+</div>

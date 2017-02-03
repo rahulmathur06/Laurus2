@@ -1,0 +1,106 @@
+<fieldset>
+    <legend>Información Básica</legend>
+    <div class="col-md-4">
+        <div class="form-group <?php if($errors->has('nombre')): ?> has-error <?php endif; ?>">
+            <label class="required control-label  ">
+         <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Nombre del automóvil. Caracteres invalidos ·$%&/()=?">
+             Nombre
+         </span>
+            </label>
+            <?php echo Form::text('nombre',null,['class' => 'form-control','id' => 'nombre']); ?>
+
+        </div><!-- /.form-group -->
+
+        <div class="form-group <?php if($errors->has('puertas')): ?> has-error <?php endif; ?>">
+            <label class="required control-label  ">
+                <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Numero de puertas que contiene el automóvil. minimo 1 y máximo 5">
+                    Numero de puertas
+                </span>
+            </label>
+            <?php echo Form::text('puertas',null,['class' => 'form-control','id' => 'puertas']); ?>
+
+
+        </div><!-- /.form-group -->
+        <div class="form-group <?php if($errors->has('equipaje_chico')): ?> has-error <?php endif; ?>">
+            <label class="required control-label ">
+                 <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Minimo de equipaje del automóvil">
+                     Equipaje chico
+                 </span>
+            </label>
+            <?php echo Form::text('equipaje_chico',null,['class' => 'form-control','id' => 'equipaje_chico']); ?>
+
+
+        </div><!-- /.form-group -->
+    </div><!-- /.col -->
+
+    <div class="col-md-4">
+        <div class="form-group <?php if($errors->has('transmision')): ?> has-error <?php endif; ?>">
+            <label class="required control-label  ">
+             <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Tipo de transmision del automóvil">
+                 Tipo de transmision
+             </span>
+            </label>
+
+            <?php echo Form::select('transmision',$transmision,null,['class'=>'form-control select3 select2-hidden-accessible','style'=>'width :100%']); ?>
+
+        </div><!-- /.form-group  -->
+
+        <div class="form-group <?php if($errors->has('aire_acondicionado')): ?> has-error <?php endif; ?>">
+            <label class="required control-label  ">
+             <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Tipo de aire acondicionado">
+                 Aire acondicionado
+             </span>
+            </label>
+
+            <?php echo Form::select('aire_acondicionado',$aire,null,['class'=>'form-control select2 select2-hidden-accessible','style'=>'width :100%']); ?>
+
+        </div><!-- /.form-group -->
+        <div class="form-group <?php if($errors->has('equipaje_grande')): ?> has-error <?php endif; ?>">
+            <label class="required control-label  ">
+                 <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Máximo de equipaje del automóvil">
+                     Equipaje Grande
+                 </span>
+            </label>
+            <?php echo Form::text('equipaje_grande',null,['class' => 'form-control','id' => 'equipaje_grande']); ?>
+
+
+        </div><!-- /.form-group -->
+
+
+    </div><!-- /.col -->
+    <div class="col-md-4">
+        <div class="form-group <?php if($errors->has('id_clase')): ?> has-error <?php endif; ?>">
+            <label class="required control-label  ">
+                 <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Clase a la que pertenece el automóvil">
+                     Clase
+                 </span>
+            </label>
+
+            <?php echo Form::select('clase_id',$clases,null,['class'=>'form-control select2 select2-hidden-accessible','style'=>'width :100%']); ?>
+
+        </div><!-- /.form-group  -->
+
+        <div class="form-group <?php if($errors->has('pasajeros')): ?> has-error <?php endif; ?>">
+            <label class="required control-label  ">
+                 <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Cantidad de numero de pasajeros. Caracteres invalidos ·$%&/()=?A-Z">
+                     Numero de pasajeros
+                 </span>
+            </label>
+            <?php echo Form::text('pasajeros',null,['class' => 'form-control','id' => 'pasajeros']); ?>
+
+
+        </div><!-- /.form-group -->
+        <div class="form-group <?php if($errors->has('grupo')): ?> has-error <?php endif; ?>">
+            <label class="required control-label  ">
+                 <span  data-toggle="tooltip" data-html="true" title="" data-original-title="Grupo al que pertenece el automóvil">
+                     Grupo
+                 </span>
+            </label>
+            <?php echo Form::select('grupo',$grupos,null,['class'=>'form-control select3 select2-hidden-accessible','style'=>'width :100%']); ?>
+
+        </div><!-- /.form-group  -->
+
+
+    </div>
+
+</fieldset>

@@ -1,0 +1,33 @@
+<?php if(count($checklist)>0): ?>
+<?php foreach($checklist as $key=>$val): ?>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group <?php if($errors->has('clave')): ?> has-error <?php endif; ?>">
+            <label class="checkbox-inline ">
+            <?php echo Form::checkbox('checklist['.$key.'][id]',$val['id'],null,['id'=>'tax_factor','class' => '']); ?><span class="checkbox-text"> <?php echo $val['documento']; ?></span>
+            </label>
+            <?php echo Form::hidden('checklist['.$key.'][required]',$val['requerido']); ?>
+
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group <?php if($errors->has('clave')): ?> has-error <?php endif; ?>">
+            <label class="control-label <?php if(!empty($val['requerido'])): ?> required <?php endif; ?> ">
+                <span>Vigencia</span>
+            </label>
+            <?php echo Form::text('checklist['.$key.'][vigencia]',null,['id'=>'vigencia','class' => 'form-control']); ?>
+
+            
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group <?php if($errors->has('clave')): ?> has-error <?php endif; ?>">
+            <label class=" control-label  ">
+            </label>
+            <?php echo Form::file('checklist['.$key.'][nomarchivo]',['id'=>'nomarchivo']); ?>
+
+        </div>
+    </div>
+</div>
+<?php endforeach; ?>
+<?php endif; ?>

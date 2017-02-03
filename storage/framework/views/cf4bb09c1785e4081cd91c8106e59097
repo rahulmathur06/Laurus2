@@ -1,0 +1,285 @@
+<?php $__env->startSection('css'); ?>
+    <link href="<?php echo e(asset("bower_components/admin-lte/plugins/datatables/dataTables.bootstrap.css")); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(asset("bower_components/admin-lte/plugins/select2/select2.css")); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(asset("bower_components/admin-lte/plugins/datepicker/datepicker3.css")); ?>" rel="stylesheet" type="text/css" />
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content-header'); ?>
+    <h1>Flota
+        <small>Vehiculos</small>
+    </h1>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box">
+			
+		<table style="width:100%" border="0">
+		                  <tr>
+		                    <th>
+						        <div class="panel-body">
+						                <form method="POST" id="search-form" class="form-inline" role="form">
+    					                    <div class="form-group">
+						                        <label for="plaza">Filtrar por oficina:</label>
+						                        <select class="form-control" name="operator" id="operator">
+							                         <option value="0" selected="selected">Seleccione</option>
+							                         <option value="BJXC01">BJXC01</option>
+							                         <option value="BJXT01">BJXT01</option>
+							                         <option value="CULT01">CULT01</option>
+							                         <option value="GDLC01">GDLC01</option>
+							                         <option value="GDLC06">GDLC06</option>
+							                         <option value="GDLR01">GDLR01</option>
+							                         <option value="GDLS02">GDLS02</option>
+							                         <option value="GDLT01">GDLT01</option>
+							                         <option value="HMOC01">HMOC01</option>
+							                         <option value="HMOT01">HMOT01</option>
+							                         <option value="HMOT02">HMOT02</option>
+							                        <option value="LAPT01">LAPT01</option>
+							                        <option value="MEXC03">MEXC03</option>
+							                        <option value="MEXC08">MEXC08</option>
+							                        <option value="MEXC17">MEXC17</option>
+							                        <option value="MEXC18">MEXC18</option>
+							                        <option value="MEXR01">MEXR01</option>
+							                        <option value="MEXT01">MEXT01</option>
+							                        <option value="MTYS01">MTYS01</option>
+							                        <option value="MTYS03">MTYS03</option>
+							                        <option value="MTYT01">MTYT01</option>
+							                        <option value="MXLC02">MXLC02</option>
+							                        <option value="MXLT01">MXLT01</option>
+							                        <option value="MZTC01">MZTC01</option>
+							                        <option value="MZTT01">MZTT01</option>
+							                        <option value="PBCR01">PBCR01</option>
+							                        <option value="PBCT01">PBCT01</option>
+							                        <option value="PRVC11">PRVC11</option>
+							                        <option value="PVRC11">PVRC11</option>
+							                        <option value="PVRN02">PVRN02</option>
+							                        <option value="PVRR01">PVRR01</option>
+							                        <option value="PVRT01">PVRT01</option>
+							                        <option value="QROC01">QROC01</option>
+							                        <option value="QROC02">QROC02</option>
+							                        <option value="QROO01">QROO01</option>
+							                        <option value="QROT01">QROT01</option>
+							                        <option value="SJDC01">SJDC01</option>
+							                        <option value="SJDC02">SJDC02</option>
+							                        <option value="SJDC06">SJDC06</option>
+							                        <option value="SJDC11">SJDC11</option>
+							                        <option value="SJDC15">SJDC15</option>
+							                        <option value="SJDR06">SJDR06</option>
+							                        <option value="SJDR11">SJDR11</option>
+							                        <option value="SJDR12">SJDR12</option>
+							                        <option value="SJDS01">SJDS01</option>
+							                        <option value="SJDT01">SJDT01</option>
+							                        <option value="SJDT61">SJDT61</option>
+							                        <option value="SLPC02">SLPC02</option>
+							                        <option value="SLPO01">SLPO01</option>
+							                        <option value="SLWC01">SLWC01</option>
+							                        <option value="TIJC02">TIJC02</option>
+							                        <option value="TIJT01">TIJT01</option>
+							                        <option value="TLCO01">TLCO01</option>
+							                        <option value="TLCO02">TLCO02</option>
+							                        <option value="TLCR01">TLCR01</option>
+						                        </select>
+						                    </div>
+						                    <button type="submit" class="btn btn-primary">Buscar</button>
+  					                     </form>
+						                <button type="button" id="limpiar" name="limpiar" >Limpiar filtro</button>
+						            </div>			
+		                    </th>
+		                    <th>
+								<div class="panel-body">
+								            <form method="POST" id="search-form-clave" class="form-inline" role="form">
+								       <div class="form-group">
+								            <label for="clave">Teclee la clave:</label>
+								       <div class="form-group">
+								      	    <input type="text" name="operator_clave" id="operator_clave">
+								       </div>
+								       </div>
+								         <button type="submit" class="btn btn-primary">Buscar</button>
+								       </form>
+								    <button type="button" id="limpiar_clave" name="limpiar_clave" >Limpiar filtro</button>
+								</div>
+		                    </th>
+		                    <th>
+								<div class="panel-body">
+								            <form method="POST" id="search-form-serie" class="form-inline" role="form">
+								       <div class="form-group">
+								            <label for="serie">Teclee el # de serie:</label>
+								       <div class="form-group">
+								      	    <input type="text" name="operator_serie" id="operator_serie">
+								       </div>
+								       </div>
+								         <button type="submit" class="btn btn-primary">Buscar</button>
+								       </form>
+								    <button type="button" id="limpiar_serie" name="limpiar_serie" >Limpiar filtro</button>
+								</div>
+		                    </th>
+		                  </tr>
+		                  <tr>
+		                    <th>
+								<div class="panel-body">
+								            <form method="POST" id="search-form-motor" class="form-inline" role="form">
+								       <div class="form-group">
+								            <label for="motor">Teclee el # de motor:</label>
+								       <div class="form-group">
+								      	    <input type="text" name="operator_motor" id="operator_motor">
+								       </div>
+								       </div>
+								         <button type="submit" class="btn btn-primary">Buscar</button>
+								       </form>
+								    <button type="button" id="limpiar_motor" name="limpiar_motor" >Limpiar filtro</button>
+								</div>
+		                    </th>
+		                    <th>
+								<div class="panel-body">
+								            <form method="POST" id="search-form-placa" class="form-inline" role="form">
+								       <div class="form-group">
+								            <label for="placa">Teclee el # de placa:</label>
+								       <div class="form-group">
+								      	    <input type="text" name="operator_placa" id="operator_placa">
+								       </div>
+								       </div>
+								         <button type="submit" class="btn btn-primary">Buscar</button>
+								       </form>
+								    <button type="button" id="limpiar_placa" name="limpiar_placa" >Limpiar filtro</button>
+								</div>
+		                    </th>
+		                    <th>
+                    
+		                    </th>
+		                  </tr>
+		        </table>	
+
+        
+            <div class="box-header">
+                <div class="btn-group btn-group-sm pull-right">
+                    <a href="crear" class="btn btn-success btn-flat"><i class="fa fa-plus"></i> Añadir Vehiculo</a>
+
+                </div>
+                <div class="col-lg-12">
+                    <?php echo $__env->make('flash::message', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                </div>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+				<table class="table table-stripped table-bordered" id="tablaFlota">
+					<thead>
+					<tr>
+							<th>Oficina</th>	
+					        <th>Clave</th>
+                            <th>Modelo</th>
+                            <th>Placas</th>
+                            <th>Propiedad</th>
+                            <th>Estatus</th>
+                            <th>Descripcion</th>
+                            <th>Fecha de estatus</th>
+						<th class="text-center" style="min-width:80px !important">Acciones</th>
+					</tr>
+					</thead>
+				</table>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div><!-- /.col -->
+</div><!-- /.row -->
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('scripts'); ?>
+    <!-- DATA TABES SCRIPT -->
+    <script src="<?php echo e(asset('bower_components/admin-lte/plugins/datatables/jquery.dataTables.min.js')); ?>" type="text/javascript"></script>
+    <script src="<?php echo e(asset('bower_components/admin-lte/plugins/datatables/dataTables.bootstrap.min.js')); ?>" type="text/javascript"></script>
+    <!-- confirmation -->
+    <script src="<?php echo e(asset('js/ajax.js')); ?>"></script>
+    <script src="<?php echo e(asset('bower_components/admin-lte/plugins/bootstrap-confirmation/bootstrap-confirmation.min.js')); ?>" type="text/javascript"></script>
+	<script>
+		$(document).ready(function(){
+		tabla =	$("#tablaFlota").DataTable({
+		        "language": {
+        		            "url": '<?php echo asset("bower_components/admin-lte/plugins/datatables/lang/spanish.json"); ?>'
+        		        },
+		        "processing": true,
+                "serverSide": true,
+                "ajax": {
+                            url: '<?php echo route("FlotaController.data"); ?>',
+                            data: function (d) {
+                                d.operator = $('select[name=operator]').val();
+								d.operator_clave = $('#operator_clave').val();
+								d.operator_serie = $('#operator_serie').val();
+								d.operator_motor = $('#operator_motor').val();
+								d.operator_placa = $('#operator_placa').val();
+                            }
+                        },
+                "columns": [
+                            {data: 'oficinainternacional', name: 'oficinainternacional'},
+                            {data: 'clave', name: 'clave'},
+                            {data: 'modelo', name: 'modelo'},
+                            {data: 'placas', name: 'placas'},
+                            {data: 'Propiedad', name: 'Propiedad'},
+                            {data: 'status', name: 'status'},
+                            {data: 'descripcion', name: 'descripcion'},
+                            {data: 'fecha_status', name: 'fecha_status'},
+                            {data: 'action', name: 'action', orderable: false, searchable: false}
+                        ],
+						"filter": false
+			});
+
+
+            $('#limpiar').click(function (e){
+            var obj=document.getElementById("operator").value = 0;
+                tabla.draw();
+                e.preventDefault();
+            });
+			
+			$('#limpiar_clave').click(function (e){
+              var obj=document.getElementById("operator_clave").value = "";
+              tabla.draw();
+              e.preventDefault();
+            });
+			
+			$('#limpiar_serie').click(function (e){
+              var obj=document.getElementById("operator_serie").value = "";
+              tabla.draw();
+              e.preventDefault();
+            });
+			
+			$('#limpiar_motor').click(function (e){
+              var obj=document.getElementById("operator_motor").value = "";
+              tabla.draw();
+              e.preventDefault();
+            });
+			
+			$('#limpiar_placa').click(function (e){
+              var obj=document.getElementById("operator_placa").value = "";
+              tabla.draw();
+              e.preventDefault();
+            });
+
+            $('#search-form').on('submit', function(e) {
+                    /*var row = $(this).parents('operator.value');
+                    var id = row.data('plaza_contable');
+                    alert(id);*/
+                     tabla.draw();
+                     e.preventDefault();
+            });
+			
+			$('#search-form-clave').on('submit', function(e) {
+               tabla.draw();
+               e.preventDefault();
+            });	
+			
+			$('#search-form-serie').on('submit', function(e) {
+               tabla.draw();
+               e.preventDefault();
+            });
+			
+			$('#search-form-motor').on('submit', function(e) {
+               tabla.draw();
+               e.preventDefault();
+            });
+			
+			$('#search-form-placa').on('submit', function(e) {
+               tabla.draw();
+               e.preventDefault();
+            });
+
+		});
+
+	</script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

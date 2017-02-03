@@ -1,0 +1,15 @@
+{
+    "name": "Reservaciones",
+    "alias": "reservaciones",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Reservaciones\\Providers\\ReservacionesServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

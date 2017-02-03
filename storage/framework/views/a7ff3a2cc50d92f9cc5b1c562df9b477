@@ -1,0 +1,67 @@
+<?php $__env->startSection('css'); ?>
+<!--<link href="<?php echo e(asset("bower_components/admin-lte/plugins/select2/select2.css")); ?>" rel="stylesheet" type="text/css" />-->
+<!--<link href="<?php echo e(asset("bower_components/admin-lte/plugins/jQueryUI/jQueryUI.css")); ?>" rel="stylesheet" type="text/css" />-->
+<link href="<?php echo e(asset("modules/cuentascorporativas/css/custom.css")); ?>" rel="stylesheet" type="text/css" />
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content-header'); ?>
+<h1>TIPO DE EMPRESAS</h1>
+<ol class="breadcrumb">
+    <li><a href="<?php echo e(url('dashboard')); ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li><a href="<?php echo e(route('tipoempresas.index')); ?>">Cuentas Corporativas</a></li>
+    <li><a href="<?php echo e(route('tipoempresas.index')); ?>">Configuracion</a></li>
+    <li><a href="<?php echo e(route('tipoempresas.index')); ?>">Tipos de Empresas</a></li>
+    <li class="active">Nuevo</li>
+</ol>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('errors.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?><!-- errors -->
+<div class="box box-success">
+    <div class="box-body">
+        <div class='col-md-8 col-md-offset-1'>
+            <?php echo Form::open(['route' => 'tipoempresas.store','method'=>'POST','id'=>'form_tipo_empresas','parsley-validate novalidate']); ?>
+
+            <?php echo $__env->make('cuentascorporativas::empresasTipo.partials.basic', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+        <div class="form-group">
+            <div class="col-sm-offset-10 col-sm-2">
+                <div class='formActionButton'><button type="submit" class="btn btn-success" id="enviar"><i class="fa fa-save"></i>  Guardar</button></div>
+                <div class='formActionButton'><a href="<?php echo e(url('tipoempresas')); ?>" class="btn btn-default" ><i class="fa fa-remove"></i> Cancelar</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- /.box-footer -->
+    <?php echo Form::close(); ?>
+
+</div>
+<?php $__env->stopSection(); ?>
+<?php /* <?php $__env->startSection('scripts'); ?> */ ?>
+<!--<script src="<?php echo e(asset('bower_components/admin-lte/plugins/select2/select2.full.js')); ?>" type="text/javascript"></script>-->
+<!--<script src="<?php echo e(asset('bower_components/admin-lte/plugins/jQueryUI/jquery-ui.min.js')); ?>"></script>-->
+<!--<script src="<?php echo e(asset("modules/fueraservicio/js/custom.js")); ?>"></script>-->
+<!--<script>
+$(function () {
+    $(".select2").select2();
+    $(".select3").select2();
+    $(".jQueryUIDatepicker").datepicker({
+        dateFormat: "yy-mm-dd",
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "-100:+0",
+        maxDate: 0        
+    });
+    jQuery.get_car_desc(document.getElementById('clave').value, "<?php echo URL::to('carcodetodescription'); ?>");
+    $('#clave').on("change", function () {
+        jQuery.get_car_desc(this.value, "<?php echo URL::to('carcodetodescription'); ?>");
+    });
+
+    });
+
+
+</script>-->
+
+<?php /* <?php $__env->stopSection(); ?>  */ ?>
+
+<?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
